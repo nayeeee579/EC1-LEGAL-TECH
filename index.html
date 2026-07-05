@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaborIA Perú</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar-fija">
+
+        <div class="navbar-logo" onclick="irAInicio()">
+            <span class="navbar-icono">⚖️</span>
+            <span>LaborIA Perú</span>
+        </div>
+
+        <nav class="navbar-links">
+            <button onclick="irAInicio()">🏠 <span>Inicio</span></button>
+            <button onclick="iniciarDiagnostico()">🔎 <span>Diagnóstico</span></button>
+            <button onclick="mostrarCalculadoras(diagnosticoActual ? diagnosticoActual.regimen : 'general')">🧮 <span>Calculadora</span></button>
+            <button onclick="mostrarConsultaJuridica()">🤖 <span>Consulta</span></button>
+            <button onclick="mostrarBaseLegal()">📚 <span>Base Legal</span></button>
+            <button onclick="mostrarDashboard()">📊 <span>Dashboard</span></button>
+        </nav>
+
+    </header>
+
+    <section class="inicio">
+
+        <div class="contenedor contenedor-ancho" id="contenido">
+
+            <div class="burbuja-flotante">
+                ¡Hola! ¿En qué puedo ayudarte con tus derechos laborales?
+            </div>
+
+            <div class="grid-principal">
+
+                <div class="columna-hero">
+
+                    <div class="avatar-hero">
+                        <span>⚖️</span>
+                    </div>
+
+                    <h1>Bienvenido a LaborIA Perú</h1>
+
+                    <p class="subtitulo-hero">
+                        Accede a los servicios de asistencia inteligente en derecho laboral peruano.
+                        Diagnóstico, calculadora de beneficios sociales y consulta jurídica en un solo lugar.
+                    </p>
+
+                    <button id="btnInicio">
+                        🚀 Comenzar evaluación laboral
+                    </button>
+
+                    <div class="separador-hero"></div>
+
+                    <h2 class="titulo-plataforma">Plataforma Integrada de Asistencia Laboral</h2>
+                    <p class="subtitulo-plataforma">Diagnóstico, calculadora y base legal en un solo lugar</p>
+
+                    <div class="pildoras">
+                        <span class="pildora">🔎 Diagnóstico laboral</span>
+                        <span class="pildora">🧮 Calculadora de beneficios</span>
+                        <span class="pildora">🤖 Consulta Jurídica</span>
+                        <span class="pildora">📚 Base Legal</span>
+                    </div>
+
+                </div>
+
+                <div class="columna-contacto">
+
+                    <h2 class="titulo-plataforma">💬 Comentarios y Atención</h2>
+                    <p class="subtitulo-plataforma">
+                        Déjanos tus comentarios, recomendaciones o tus datos para
+                        una atención personalizada.
+                    </p>
+
+                    <div class="pregunta">
+                        <label>Nombre completo</label>
+                        <input type="text" id="contactoNombre" placeholder="Ej. María Pérez">
+                    </div>
+
+                    <div class="pregunta">
+                        <label>Correo electrónico</label>
+                        <input type="email" id="contactoCorreo" placeholder="Ej. maria@correo.com">
+                    </div>
+
+                    <div class="pregunta">
+                        <label>Teléfono</label>
+                        <input type="tel" id="contactoTelefono" placeholder="Ej. 987654321">
+                    </div>
+
+                    <div class="pregunta">
+                        <label>Comentario o recomendación</label>
+                        <textarea id="contactoComentario" rows="3" placeholder="Escribe aquí..."></textarea>
+                    </div>
+
+                    <p id="contactoEstado" class="nota-legal"></p>
+
+                    <button class="btn-correo" onclick="enviarCorreo()">
+                        📧 Enviar por correo
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <a class="fab-whatsapp" href="#" onclick="abrirWhatsApp(); return false;" aria-label="Escríbenos por WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#fff" d="M16 3C9.373 3 4 8.373 4 15c0 2.34.66 4.52 1.8 6.38L4 29l7.8-1.75C13.55 27.72 14.75 28 16 28c6.627 0 12-5.373 12-13S22.627 3 16 3z"/>
+            <path fill="#25D366" d="M16 4.5C10.2 4.5 5.5 9.2 5.5 15c0 2.02.58 3.9 1.58 5.5l-1.05 5.03 5.2-1.36c1.5.83 3.22 1.31 5.06 1.31 6.9 0 12.5-4.7 12.5-10.5S23 4.5 16 4.5z"/>
+            <path fill="#fff" d="M12.4 9.9c-.25-.55-.5-.56-.74-.57-.19-.01-.41-.01-.63-.01-.22 0-.58.08-.88.4-.3.32-1.15 1.12-1.15 2.74 0 1.61 1.18 3.17 1.34 3.39.16.22 2.28 3.65 5.63 4.97 2.78 1.1 3.35.88 3.95.83.6-.06 1.94-.79 2.21-1.56.27-.77.27-1.42.19-1.56-.08-.14-.3-.22-.63-.38-.33-.16-1.94-.96-2.24-1.07-.3-.11-.52-.16-.74.16-.22.32-.85 1.07-1.04 1.29-.19.22-.38.25-.7.08-.33-.16-1.37-.5-2.61-1.6-.97-.86-1.62-1.92-1.81-2.24-.19-.32-.02-.5.14-.66.15-.15.33-.38.5-.57.16-.19.22-.32.33-.54.11-.22.05-.41-.03-.57-.08-.16-.7-1.73-.99-2.37z"/>
+        </svg>
+        <span class="fab-robot">🤖</span>
+    </a>
+
+    <div id="modalDetalle" class="modal-overlay oculto" onclick="if(event.target===this){cerrarDetalle();}">
+        <div class="modal-caja">
+            <button class="modal-cerrar" onclick="cerrarDetalle()">✕</button>
+            <div id="modalContenido"></div>
+        </div>
+    </div>
+
+    <script src="js/app.js?v=9"></script>
+    <script src="js/calculadora.js?v=9"></script>
+    <script src="js/consulta.js?v=9"></script>
+    <script src="js/dashboard.js?v=9"></script>
+    <script src="js/contacto.js?v=9"></script>
+
+</body>
+
+</html>
